@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600;700;800&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --section-padding: 60px;
+  --primary-color: #10cab7;
+  --special-font-color: #777;
+}
+
+body {
+  font-family: 'Work Sans', sans-serif;
+}
+
+/* golbals */
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.special-heading {
+  margin: 0;
+  font-size: 100px;
+  color: #ebeced;
+  font-weight: 800;
+  text-align: center;
+  letter-spacing: -3px;
+}
+
+.special-heading + p {
+  margin: -30px 0 0;
+  font-size: 20px;
+  text-align: center;
+  color: var(--special-font-color);
+}
+
+@media (max-width: 767) {
+  .special-heading {
+    font-size: 60px;
+  }
+
+  .special-heading + p {
+    margin-top: -20px;
+  }
+}
+
+/* Small */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+/* Medium */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+/* Large */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+/* end globals */
+
+/* start header styling */
+header {
+  padding: 20px 0;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .container img {
+  width: 60px;
+}
+
+header .container .links {
+  position: relative;
+}
+
+header .container .links .side-links-icon {
+  width: 20px;
+  height: 17px;
+
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+header .container .links .side-links-icon span {
+  width: 100%;
+  height: 3px;
+
+  background-color: black;
+}
+
+header .container .links .side-links-icon span:nth-child(2) {
+  width: 75%;
+  transition: width 0.5s;
+}
+
+header .container .links:hover .side-links-icon span:nth-child(2) {
+  width: 100%;
+}
+
+header .container .links ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  min-width: 200px;
+
+  position: absolute;
+  top: calc(100% + 15px);
+  right: 0;
+
+  background-color: #f6f6f6;
+  display: none;
+}
+
+header .container .links:hover ul {
+  display: block;
+}
+
+header .container .links ul::before {
+  content: "";
+  border-width: 10px;;
+  border-style: solid;
+  border-color: transparent transparent #f6f6f6 transparent;
+  position: absolute;
+  right: 0;
+  top: -20px;
+  right: 5px;
+}
+
+header .container .links ul li {
+  padding: 15px;
+  transition: 0.5s;
+}
+
+header .container .links ul li:hover {
+  padding-left: 25px;
+}
+
+header .container .links ul li:not(:last-child) {
+  border-bottom: 1px solid #ddd;
+}
+
+header .container .links ul li a {
+  text-decoration: none;
+  color: black
+}
+/* end header styling */
+
+/* start landing section */
+.landing {
+  /* to fill the page and extracting the header height */
+  height: calc(100vh - 64px);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  /* center the inline and inline-block content of the container */
+  text-align: center;
+
+  background-image: url(../images/landing.jpeg);
+  background-size: cover;
+}
+
+.landing h1 {
+  margin: 0;
+  font-size: 50px;
+  font-weight: bold;
+  text-transform: capitalize;
+  color: var(--primary-color);
+}
+
+.landing p {
+  font-size: 19px;
+  line-height: 1.6;
+}
+/* end landing section */
+
+/* start features section */
+.features {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+  background-color: #f6f6f6;
+}
+
+.features .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 20px;
+}
+
+.features .container div {
+  padding: 20px;
+  text-align: center;
+}
+
+.features .container div:hover {
+  box-shadow: 1px 1px 15px  black;
+}
+
+.features .container div i {
+  color: var(--primary-color);
+  transition: 1s;
+  transition-timing-function: linear;
+}
+
+.features .container div:hover i {
+  transform: rotateY(0.5turn);
+}
+
+.features .container div h3 {
+  margin: 30px 0;
+  font-weight: 800;
+  text-transform: capitalize;
+}
+
+.features .container div p {
+  color: var(--special-font-color);
+  font-size: 17px;
+  line-height: 1.8; 
+}
+/* end features section */
+
+/* start services section */
+.services {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+}
+
+.services-content {
+  margin-top: 100px;
+
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.services-content .col .service {
+  display: flex;
+}
+/* end services section */
+
+
